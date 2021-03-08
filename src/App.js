@@ -20,7 +20,7 @@ class App extends Component {
       })),
       gameStarted: true
     });
-
+    console.log(players);
   }
 
   movePlayer = (number, squares) => {
@@ -55,6 +55,7 @@ class App extends Component {
       <div className="App">
           <Players players={this.state.players} />
         {
+          //logic, game phase 1 started? phase 2 started? phase 3 started? etc. just like below but phase instead of y/n
           this.state.gameStarted ?
             <GameBoard
               movePlayer = {this.movePlayer}
