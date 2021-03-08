@@ -1,0 +1,116 @@
+.App {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #cedce7 0%, #596a72 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.pawn, .player-pawn {
+    width: 100px;
+    height: 100px;
+}
+
+.pawn:hover {
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+.pawn-logo {
+    width: 50px;
+    height: auto;
+}
+
+.pawn-container {
+    display: inline-block;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.players {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.players p {
+    text-align: center;
+}
+
+.button {
+    margin: auto;
+    text-align: center;
+    position: relative;
+    display: block;
+    height: 100px;
+    width: 80%;
+    background-color: blue;
+    color: white;
+    padding: 20px;
+    border: 8px solid black;
+    font-size: 3em;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
+.button:hover {
+    opacity: 0.8;
+}
+
+.game-board {
+    display: grid;
+    width: 60vw;
+    height: 60vw;
+    max-width: 70vh;
+    max-height: 70vh;
+    margin-top: -10vh;
+    margin-bottom: 50px;
+}
+
+.game-square {
+    text-align: center;
+    color: white;
+    background: black;
+    outline: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-square img {
+    width: 80%;
+    height: auto;
+}
+
+.player-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-avatar .pawn {
+    width: 50px;
+    height: auto;
+}
+
+.board-middle {
+    grid-column: 2 / 5;
+    grid-row: 2 / 5;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.rolled-die {
+    font-size: 10em;
+}
+
+.player-score {
+    font-size: 3em;
+}
