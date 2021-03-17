@@ -109,6 +109,8 @@
 
 .rolled-die {
     font-size: 10em;
+    height: 120px;
+    margin-top: -50px;
 }
 
 .player-score {

@@ -20,7 +20,6 @@ class App extends Component {
       })),
       gameStarted: true
     });
-
   }
 
   movePlayer = (number, squares) => {
@@ -29,8 +28,8 @@ class App extends Component {
         if (player.number === this.state.currentPlayer) {
           const location = player.location + number;
           const landingSquare = squares[location % squares.length];
-          let increaseScore = 0;
 
+          let increaseScore = 0;
           if (landingSquare.type === player.pawn) {
             increaseScore = 2;
           } else {

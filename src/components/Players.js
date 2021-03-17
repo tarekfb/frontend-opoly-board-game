@@ -7,12 +7,17 @@ const Players = ({ players }) => (
       // eslint-disable-next-line react/prop-types
       players.map(player => (
         <div key={player.number} className="player">
-          <p>Player {player.number}</p>
-          <img
-            className="player-pawn"
-            alt={player.pawn}
-            src={`./images/${player.pawn}-pawn.png`}/>
-            <p className="player-score">{player.score}</p>
+          <p>{player.name}</p>
+          {
+            player.pawn ? (
+              <img
+              className="player-pawn"
+              alt={player.pawn}
+              src={`./images/${player.pawn}-pawn.png`}/>
+              ) : null
+          }
+
+          <p className="player-score">{player.score}</p>
         </div>
       ))
     }
