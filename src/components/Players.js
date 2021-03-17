@@ -8,10 +8,15 @@ const Players = ({ players }) => (
       players.map(player => (
         <div key={player.number} className="player">
           <p>{player.name}</p>
-          <img
-            className="player-pawn"
-            alt={player.pawn}
-            src={`./images/${player.pawn}-pawn.png`}/>
+          {
+            player.pawn ? (
+              <img
+              className="player-pawn"
+              alt={player.pawn}
+              src={`./images/${player.pawn}-pawn.png`}/>
+              ) : null
+          }
+
           <p className="player-score">{player.score}</p>
         </div>
       ))

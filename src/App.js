@@ -20,7 +20,6 @@ class App extends Component {
       })),
       gameStarted: true
     });
-    console.log(players);
   }
 
   movePlayer = (number, squares) => {
@@ -29,8 +28,8 @@ class App extends Component {
         if (player.number === this.state.currentPlayer) {
           const location = player.location + number;
           const landingSquare = squares[location % squares.length];
-          let increaseScore = 0;
 
+          let increaseScore = 0;
           if (landingSquare.type === player.pawn) {
             increaseScore = 2;
           } else {
@@ -55,7 +54,6 @@ class App extends Component {
       <div className="App">
           <Players players={this.state.players} />
         {
-          //logic, game phase 1 started? phase 2 started? phase 3 started? etc. just like below but phase instead of y/n
           this.state.gameStarted ?
             <GameBoard
               movePlayer = {this.movePlayer}

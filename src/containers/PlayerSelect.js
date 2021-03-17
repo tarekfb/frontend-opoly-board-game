@@ -2,15 +2,6 @@ import React, {Component} from "react";
 import Players from "../components/Players"
 
 class PlayerSelect extends Component {
-  // state = {
-  //   pawns: ["angular", "js", "react", "vue"],
-  //   currentPlayerSelect: 1,
-  //   players: [],
-  //   numberOfPlayers: 2,
-  //   showNumberOfPlayers: true,
-  //   readyToStart: false,
-  //   showPlayerSelection: false
-  // };
 
   constructor(props) {
     super(props);
@@ -31,13 +22,21 @@ class PlayerSelect extends Component {
     // Create array, add whatever is currently held in state.players
     // For every player, create the name property and assign value player_i
     let players = [...this.state.players];
-    for (let i = 0; i < this.state.numberInputValue; i++) {
-      let playerProps = {
-        name: `player_${i + 1}`,
-        number: i + 1,
-        nameInputValue: `player_${i + 1}`
-      };
-      players.splice(i, 0, playerProps);
+
+    let input = this.state.numberInputValue;
+
+    // default = 2
+    if (this.state.numberingSystem <= 0)
+      input = 2
+    else {
+      for (let i = 0; i < input; i++) {
+        let playerProps = {
+          name: `player_${i + 1}`,
+          number: i + 1,
+          nameInputValue: `player_${i + 1}`
+        };
+        players.splice(i, 0, playerProps);
+      }
     }
 
     // Set nbr of players, array and show next react component
@@ -57,9 +56,9 @@ class PlayerSelect extends Component {
   }
 
   setPlayer = (pawn) => {
-    if (this.state.players.find(player => player.pawn === pawn)) {
+    if (this.state.players.find(player => player.pawn === pawn))
       alert("No");
-    } else {
+    else {
       this.setState((prevState) => ({
         currentPlayerSelect: prevState.currentPlayerSelect + 1,
         players: [
